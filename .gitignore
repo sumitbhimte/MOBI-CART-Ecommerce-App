@@ -12,6 +12,8 @@
 #environment variable
 .env
 
+hey.txt
+
 # misc
 .DS_Store
 .env.local
