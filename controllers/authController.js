@@ -7,7 +7,7 @@ export const registerController = async (req, res) => {
         const { name, email, password, phone, address, answer } = req.body;
         //validations
         if (!name) {
-            return res.send({ message: "Name is Required" });
+            return res.send({ error: "Name is Required" });
         }
         if (!email) {
             return res.send({ message: "Email is Required" });
@@ -42,7 +42,7 @@ export const registerController = async (req, res) => {
             phone,
             address,
             password: hashedPassword,
-            answer
+            answer,
         }).save();
 
         res.status(201).send({
@@ -99,6 +99,7 @@ export const loginController = async (req, res) => {
                 email: user.email,
                 phone: user.phone,
                 adddress: user.address,
+                role: user.role,
             },
             token,
         });
@@ -113,6 +114,7 @@ export const loginController = async (req, res) => {
 };
 
 //forgotPasswordController
+
 export const forgotPasswordController = async (req, res) => {
     try {
         const { email, answer, newPassword } = req.body;

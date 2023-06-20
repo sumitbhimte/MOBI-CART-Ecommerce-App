@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
+
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ const Register = () => {
                 phone,
                 address,
                 answer,
-            });
+            }); 
             if (res && res.data.success) {
                 toast.success(res.data && res.data.message);
                 navigate("/login");
