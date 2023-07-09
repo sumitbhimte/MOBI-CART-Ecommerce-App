@@ -14,7 +14,7 @@ const About = () => {
                 </div>
                 <div className="col-md-4">
                     <p className="text-justify mt-2">
-                        This speaks bot ecommerce site using mern stack
+                        This Site is created using MERN Stack
                     </p>
                 </div>
             </div>

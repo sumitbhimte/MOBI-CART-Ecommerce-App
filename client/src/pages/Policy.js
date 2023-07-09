@@ -13,13 +13,15 @@ const Policy = () => {
                     />
                 </div>
                 <div className="col-md-4">
-                    <p>add privacy policy</p>
-                    <p>add privacy policy</p>
-                    <p>add privacy policy</p>
-                    <p>add privacy policy</p>
-                    <p>add privacy policy</p>
-                    <p>add privacy policy</p>
-                    <p>add privacy policy</p>
+
+                    <p><b>MOBI CART, We committed to protecting the
+                        privacy and security of your personal information.
+                    </b></p>
+                    <p><i>This Privacy Policy describes how we collect, use, disclose,
+                        and protect the information you provide when using our Website
+                        mobicart.com. By accessing or using the Website, you consent to the terms and practices outlined
+                        in this Privacy Policy.</i></p>
+
                 </div>
             </div>
         </Layout>

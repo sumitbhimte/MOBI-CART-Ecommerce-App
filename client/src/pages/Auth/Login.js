@@ -39,14 +39,15 @@ const Login = () => {
         }
     };
     return (
-        <Layout title="Register - Ecommer App">
-            <div className="form-container ">
+        <Layout title="Login - MOBI CART">
+            <div className="form-container " style={{ minHeight: "90vh" }}>
                 <form onSubmit={handleSubmit}>
                     <h4 className="title">LOGIN FORM</h4>
 
                     <div className="mb-3">
                         <input
                             type="email"
+                            autoFocus
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="form-control"
@@ -66,21 +67,24 @@ const Login = () => {
                             required
                         />
                     </div>
-                    <div className="mb-3">
-                        <button
-                            type="button"
-                            className="btn btn-primary"
-                            onClick={() => {
-                                navigate("/forgot-password");
-                            }}
-                        >
-                            Forgot Password
-                        </button>
-                    </div>
-
                     <button type="submit" className="btn btn-primary">
                         LOGIN
                     </button>
+
+                    <div className="mb-3 my-2">
+                        <p
+                            type="text"
+                            class="clickable"
+                            color="darkblue"
+                            cursor="pointer"
+                            onClick={() => {
+                                navigate("/forgot-password");
+                            }}
+                        ><i><u> Forgot Password.?
+                        </u></i>
+                        </p>
+                    </div>
+
                 </form>
             </div>
         </Layout>

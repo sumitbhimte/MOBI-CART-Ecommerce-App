@@ -4,7 +4,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
-
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -25,7 +24,7 @@ const Register = () => {
                 phone,
                 address,
                 answer,
-            }); 
+            });
             if (res && res.data.success) {
                 toast.success(res.data && res.data.message);
                 navigate("/login");
@@ -39,8 +38,8 @@ const Register = () => {
     };
 
     return (
-        <Layout title="Register - Ecommer App">
-            <div className="form-container ">
+        <Layout title="Register - MOBI CART ">
+            <div className="form-container" style={{ minHeight: "90vh" }}>
                 <form onSubmit={handleSubmit}>
                     <h4 className="title">REGISTER FORM</h4>
                     <div className="mb-3">
