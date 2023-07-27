@@ -11,6 +11,7 @@ import "../styles/Homepage.css";
 
 import Slider from "./HomePageSlider";
 import data from "../data/data.json"
+import { Cursor } from "mongoose";
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -172,16 +173,17 @@ const HomePage = () => {
                 </div>
                 <div className="col-md-9 ">
                     <h1 className="text-center">All Products</h1>
-                    <div className="d-flex flex-wrap">
+                    <div className="d-flex flex-wrap"  >
                         {products?.map((p) => (
-                            <div className="card m-3" key={p._id}>
+                            <div className="card m-3" key={p._id} style={{ cursor: "pointer" }}>
                                 <img
                                     src={`/api/v1/product/product-photo/${p._id}`}
                                     className="card-img-top"
                                     alt={p.name}
+                                    onClick={() => navigate(`/product/${p.slug}`)}
                                 />
                                 <div className="card-body">
-                                    <div className="card-name-price flex-column">
+                                    <div className="card-name-price flex-column" onClick={() => navigate(`/product/${p.slug}`)}>
                                         <h5 className="card-title">
                                             {p.name.length > 35 ? p.name.substring(0, 35) + "..." : p.name}</h5>
                                         <h5 className="card-title card-price">
@@ -192,16 +194,16 @@ const HomePage = () => {
                                             })}
                                         </h5>
                                     </div>
-                                    <p className="card-text ">
+                                    <p className="card-text " onClick={() => navigate(`/product/${p.slug}`)}>
                                         {p.description.substring(0, 60)}...
                                     </p>
                                     <div className="card-name-price" id="card-button">
-                                        <button
+                                        {/* <button
                                             className="btn btn-info ms-1"
                                             onClick={() => navigate(`/product/${p.slug}`)}
                                         >
                                             More Details
-                                        </button>
+                                        </button> */}
                                         <button
                                             className="btn btn-dark ms-1"
                                             onClick={() => {
@@ -220,6 +222,7 @@ const HomePage = () => {
                             </div>
                         ))}
                     </div>
+
                     <div className="m-2 p-3">
                         {products && products.length < total && flag && (
                             <button
@@ -242,7 +245,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </Layout >
     );
 };
 

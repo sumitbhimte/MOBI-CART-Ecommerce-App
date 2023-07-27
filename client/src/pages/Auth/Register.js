@@ -4,6 +4,19 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
+
+import {
+    MDBBtn,
+    MDBContainer,
+    MDBCard,
+    MDBCardBody,
+    MDBCol,
+    MDBRow,
+    MDBInput,
+    MDBCheckbox,
+    MDBIcon
+} from 'mdb-react-ui-kit';
+
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -39,7 +52,7 @@ const Register = () => {
 
     return (
         <Layout title="Register - MOBI CART ">
-            <div className="form-container" style={{ minHeight: "90vh" }}>
+            {/* <div className="form-container" style={{ minHeight: "90vh" }}>
                 <form onSubmit={handleSubmit}>
                     <h4 className="title">REGISTER FORM</h4>
                     <div className="mb-3">
@@ -113,7 +126,91 @@ const Register = () => {
                         REGISTER
                     </button>
                 </form>
-            </div>
+            </div> */}
+
+
+            <MDBContainer fluid>
+
+                <div className="p-5 bg-image" style={{ backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px' }}></div>
+                <form onSubmit={handleSubmit}>
+                    <MDBCard className='mx-5 mb-5 p-5 shadow-5' style={{ marginTop: '-100px', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)' }}>
+                        <MDBCardBody className='p-5 text-center' style={{ marginRight: '450px', marginLeft: '450px' }}>
+
+                            <h2 className="fw-bold mb-5">Sign Up</h2>
+
+                            <MDBInput
+                                wrapperClass='mb-4'
+                                id='form1'
+                                type='text'
+                                placeholder="Name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+
+                            <MDBInput
+                                wrapperClass='mb-4'
+                                id='form1'
+                                type='email'
+                                placeholder='Enter Your Email'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+
+                            <MDBInput
+                                wrapperClass='mb-4'
+                                id='form1'
+                                type='password'
+                                placeholder='Enter Password'
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required  // Add the required attribute here
+                            />
+
+                            <MDBInput
+                                wrapperClass='mb-4'
+                                id='form1'
+                                type='text'
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                placeholder='Enter Phone number'
+                                required
+                            />
+
+                            <MDBInput
+                                wrapperClass='mb-4'
+                                id='form1'
+                                type='text'
+                                placeholder='Enter Address'
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                                required
+                            />
+
+                            <MDBInput
+                                wrapperClass='mb-4'
+                                id='form1'
+                                type='text'
+                                placeholder='What is favourite Sport'
+                                value={answer}
+                                onChange={(e) => setAnswer(e.target.value)}
+                                required
+                            />
+
+                            <div className='d-flex justify-content-center mb-4'>
+                                <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
+                            </div>
+                            <button type="submit"
+                                className="btn btn-primary custom-btn-width"
+                            >
+                                Register
+                            </button>
+
+                        </MDBCardBody>
+                    </MDBCard>
+                </form>
+            </MDBContainer>
         </Layout>
     );
 };

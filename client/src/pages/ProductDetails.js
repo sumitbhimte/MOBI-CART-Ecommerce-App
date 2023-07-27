@@ -96,6 +96,7 @@ const ProductDetails = () => {
                                 <img id="prod_img"
                                     src={`/api/v1/product/product-photo/${p._id}`}
                                     alt={p.name}
+                                    onClick={() => navigate(`/product/${p.slug}`)}
                                 />
                                 <div className="card-body">
                                     <div className="card-name-price">
@@ -108,7 +109,7 @@ const ProductDetails = () => {
                                             })}
                                         </h5>
                                     </div>
-                                    <p className="card-text ">
+                                    <p className="card-text " onClick={() => navigate(`/product/${p.slug}`)}>
                                         {p.description.substring(0, 60)}...
                                     </p>
                                     <div className="card-name-price">

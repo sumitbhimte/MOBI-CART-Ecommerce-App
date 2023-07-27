@@ -60,3 +60,10 @@
 .forgot-btn:hover {
     color: white !important;
 }
+
+
+
+.custom-btn-width {
+    width: 170px;
+    /* Set the desired width in pixels or any other valid CSS units */
+}
