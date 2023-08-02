@@ -5,7 +5,7 @@
 
 .category .card {
     background-color: rgba(128, 128, 128, 0.097);
-    width: 18rem;
+    width: 15rem;
 }
 
 .category .card-name-price {
@@ -33,7 +33,7 @@
 }
 
 .category .card img:hover {
-    transform: scale(0.9);
+    transform: scale(1.02);
 }
 
 .category .card-img-top {

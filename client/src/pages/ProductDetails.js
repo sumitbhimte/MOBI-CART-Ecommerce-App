@@ -90,9 +90,9 @@ const ProductDetails = () => {
                     {relatedProducts.length < 1 && (
                         <p className="text-center">No Similar Products found</p>
                     )}
-                    <div className="d-flex flex-wrap">
+                    <div className="d-flex flex-wrap offset-1">
                         {relatedProducts?.map((p) => (
-                            <div className="card m-2 container" key={p._id}>
+                            <div className="card m-2 container" key={p._id} style={{ cursor: "pointer" }}>
                                 <img id="prod_img"
                                     src={`/api/v1/product/product-photo/${p._id}`}
                                     alt={p.name}

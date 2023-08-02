@@ -206,7 +206,6 @@ const Register = () => {
                             >
                                 Register
                             </button>
-
                         </MDBCardBody>
                     </MDBCard>
                 </form>
